@@ -1,0 +1,5 @@
+simple reflex
+utility
+model
+--> goal 
+learning
