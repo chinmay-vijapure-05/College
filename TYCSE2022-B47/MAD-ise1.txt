@@ -1,0 +1,38 @@
+package com.example.tycseb47_chinmayvijapure
+
+import android.app.PendingIntent.getActivity
+import android.content.res.Configuration
+import android.os.Bundle
+import android.view.Display
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+    }
+    fun getScreenOrientation(): Int {
+        val getOrient: Display = MainActivity().getWindowManager().getDefaultDisplay()
+        var orientation: Int = Configuration.ORIENTATION_UNDEFINED
+        orientation = if (getOrient.getWidth() === getOrient.getHeight()) {
+            Configuration.ORIENTATION_SQUARE
+        } else {
+            if (getOrient.getWidth() < getOrient.getHeight()) {
+                Configuration.ORIENTATION_PORTRAIT
+            } else {
+                Configuration.ORIENTATION_LANDSCAPE
+            }
+        }
+        return orientation
+    }
+
+}
+
+/*
+
+orientation
+notification
+button lock
+count
+
+ */
